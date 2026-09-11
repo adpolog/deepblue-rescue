@@ -34,7 +34,7 @@ public class Animal {
     
     private RescueCase rescueCase;
 
-    @OneToOne(mappedBy = "animal", fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "animal",cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private MedicalRecord medicalRecord;
 
     @OneToMany(mappedBy = "animal")
