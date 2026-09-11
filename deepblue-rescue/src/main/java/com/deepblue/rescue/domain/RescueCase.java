@@ -77,4 +77,26 @@ public class RescueCase {
     public void setRescueCenter(RescueCenter rescueCenter) {
         this.rescueCenter = rescueCenter;
     }
+    // Relación 1:1 con Animal (Paso 21)
+    @OneToOne(
+            mappedBy = "rescueCase",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
+    private Animal animal;
+
+    // Método para mantener ambos lados de la relación
+    public void assignAnimal(Animal animal) {
+        this.animal = animal;
+        animal.setRescueCase(this);
+    }
+
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
 }
