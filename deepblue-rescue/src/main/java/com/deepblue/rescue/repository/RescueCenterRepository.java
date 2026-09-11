@@ -1,4 +1,4 @@
-// Archivo 1: RescueCenterRepository.java (Paso 31)
+
 package com.deepblue.rescue.repository;
 
 import com.deepblue.rescue.domain.RescueCenter;
