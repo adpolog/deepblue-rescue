@@ -24,60 +24,12 @@ public class RescueCase {
     @Column(nullable = false)
     private RescueStatus status;
 
-    // Relación N:1 hacia RescueCenter
+    // Paso 20: Relación N:1 hacia RescueCenter
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "rescue_center_id", nullable = false)
     private RescueCenter rescueCenter;
 
-    // Getters y Setters manuales
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getCaseCode() {
-        return caseCode;
-    }
-
-    public void setCaseCode(String caseCode) {
-        this.caseCode = caseCode;
-    }
-
-    public LocalDate getRescueDate() {
-        return rescueDate;
-    }
-
-    public void setRescueDate(LocalDate rescueDate) {
-        this.rescueDate = rescueDate;
-    }
-
-    public String getRescueLocation() {
-        return rescueLocation;
-    }
-
-    public void setRescueLocation(String rescueLocation) {
-        this.rescueLocation = rescueLocation;
-    }
-
-    public RescueStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(RescueStatus status) {
-        this.status = status;
-    }
-
-    public RescueCenter getRescueCenter() {
-        return rescueCenter;
-    }
-
-    public void setRescueCenter(RescueCenter rescueCenter) {
-        this.rescueCenter = rescueCenter;
-    }
-    // Relación 1:1 con Animal (Paso 21)
+    // Paso 21: Relación 1:1 con Animal
     @OneToOne(
             mappedBy = "rescueCase",
             cascade = CascadeType.ALL,
@@ -86,17 +38,24 @@ public class RescueCase {
     )
     private Animal animal;
 
-    // Método para mantener ambos lados de la relación
     public void assignAnimal(Animal animal) {
         this.animal = animal;
         animal.setRescueCase(this);
     }
 
-    public Animal getAnimal() {
-        return animal;
-    }
-
-    public void setAnimal(Animal animal) {
-        this.animal = animal;
-    }
+    // Getters y Setters manuales
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getCaseCode() { return caseCode; }
+    public void setCaseCode(String caseCode) { this.caseCode = caseCode; }
+    public LocalDate getRescueDate() { return rescueDate; }
+    public void setRescueDate(LocalDate rescueDate) { this.rescueDate = rescueDate; }
+    public String getRescueLocation() { return rescueLocation; }
+    public void setRescueLocation(String rescueLocation) { this.rescueLocation = rescueLocation; }
+    public RescueStatus getStatus() { return status; }
+    public void setStatus(RescueStatus status) { this.status = status; }
+    public RescueCenter getRescueCenter() { return rescueCenter; }
+    public void setRescueCenter(RescueCenter rescueCenter) { this.rescueCenter = rescueCenter; }
+    public Animal getAnimal() { return animal; }
+    public void setAnimal(Animal animal) { this.animal = animal; }
 }
