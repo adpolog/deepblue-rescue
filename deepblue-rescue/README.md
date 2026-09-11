@@ -1,4 +1,7 @@
 # DeepBlue Rescue
+### Estudiantes: Andry Polo, Daniel Ramos
+### URL Github: https://github.com/adpolog/deepblue-rescue.git
+### Branch: feature/repository-layer
 
 ## Descripción Breve
 **DeepBlue Rescue** es un sistema de gestión backend desarrollado en **Java 21** y **Spring Boot ** diseñado para administrar una red de rescate de fauna marina. Permite el control integral de centros de operación, casos de rescate, expedientes médicos de animales, registro de especialistas con sus respectivas áreas de experticia y la gestión de tratamientos clínicos y de rehabilitación.
