@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface TreatmentRepository extends JpaRepository<Treatment, Long> {
 
-   
+
     List<Treatment> findByAnimalIdOrderByPerformedAtAsc(Long animalId);
 
 
