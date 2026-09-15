@@ -24,5 +24,6 @@ public record RescueCaseResponse(
 
 
 ) {
+
 }
 
