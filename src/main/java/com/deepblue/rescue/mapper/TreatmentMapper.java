@@ -9,6 +9,6 @@ import org.mapstruct.Mapping;
 public interface TreatmentMapper {
 
     @Mapping(target = "animalCode", source = "animal.animalCode")
-    @Mapping(target = "specialistCode", source = "specialist.code")
+    @Mapping(target = "specialistCode", source = "specialist.professionalCode")
     TreatmentResponse toResponse(Treatment treatment);
 }
