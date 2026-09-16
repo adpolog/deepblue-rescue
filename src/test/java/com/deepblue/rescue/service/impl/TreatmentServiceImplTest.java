@@ -1,4 +1,4 @@
-package com.deepblue.rescue.service;
+package com.deepblue.rescue.service.impl;
 
 public class TreatmentServiceImplTest {
 }
