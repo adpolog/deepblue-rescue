@@ -21,8 +21,6 @@ public record RescueCaseResponse(
         String animalCode
 
 
-
-
 ) {
 
 }

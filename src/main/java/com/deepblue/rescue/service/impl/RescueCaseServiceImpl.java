@@ -22,13 +22,13 @@ public class RescueCaseServiceImpl implements RescueCaseService {
     private final RescueCaseRepository repository;
     private final RescueCaseMapper mapper;
 
-    // Inyección de dependencias mediante constructor (Paso 14)
+
     public RescueCaseServiceImpl(RescueCaseRepository repository, RescueCaseMapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }
 
-    // Paso 15: Implementar findByCode
+
     @Override
     public RescueCaseResponse findByCode(String caseCode) {
         return repository
@@ -41,7 +41,7 @@ public class RescueCaseServiceImpl implements RescueCaseService {
                 );
     }
 
-    // Métodos pendientes de la interfaz (se implementarán en los siguientes pasos)
+
     @Override
     public List<RescueCaseResponse> findByStatus(
             RescueStatus status) {

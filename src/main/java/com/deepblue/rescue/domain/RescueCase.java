@@ -24,12 +24,11 @@ public class RescueCase {
     @Column(nullable = false)
     private RescueStatus status;
 
-    // Paso 20: Relación N:1 hacia RescueCenter
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "rescue_center_id", nullable = false)
     private RescueCenter rescueCenter;
 
-    // Paso 21: Relación 1:1 con Animal
     @OneToOne(
             mappedBy = "rescueCase",
             cascade = CascadeType.ALL,
