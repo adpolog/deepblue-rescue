@@ -30,6 +30,7 @@ export default function CaseDetail({ caseItem, onChanged }) {
                 {animal.isPending && <p>Cargando...</p>}
                 {animal.isError && <ErrorMessage error={animal.error} />}
 
+                {/* Muestra cualquier campo que devuelva tu API de animales */}
                 {animal.data && (
                     <ul>
                         {Object.entries(animal.data).map(([key, value]) => (
