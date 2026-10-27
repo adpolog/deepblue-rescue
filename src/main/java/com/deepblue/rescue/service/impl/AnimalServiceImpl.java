@@ -29,7 +29,7 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     public List<AnimalResponse> findAnimalsInRehabilitation() {
-        return animalRepository.findAnimalsInRehabilitation().stream()
+        return animalRepository.findByRescueStatus(RescueStatus.IN_REHABILITATION).stream()
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());
     }

@@ -6,14 +6,9 @@ import java.util.List;
 
 public interface AnimalService {
 
-    AnimalResponse findByCode(
-                    String animalCode
-    );
-                    List<AnimalResponse>
-                    findAnimalsInRehabilitation();
+    AnimalResponse findByCode(String animalCode);
 
-    boolean canReceiveTreatment(
-            String animalCode
-    );
+    List<AnimalResponse> findAnimalsInRehabilitation();
 
+    boolean canReceiveTreatment(String animalCode);
 }

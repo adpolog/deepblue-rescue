@@ -30,6 +30,7 @@ CREATE TABLE animals (
  common_name VARCHAR(100) NOT NULL,
  scientific_name VARCHAR(150) NOT NULL,
  sex VARCHAR(20) NOT NULL,
+ tracking_device_code VARCHAR(50) UNIQUE,
  rescue_case_id BIGINT NOT NULL UNIQUE,
  CONSTRAINT fk_animal_rescue_case FOREIGN KEY (rescue_case_id) REFERENCES rescue_cases(id)
 );
