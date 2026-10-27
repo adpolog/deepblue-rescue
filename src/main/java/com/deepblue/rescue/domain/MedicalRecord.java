@@ -11,19 +11,20 @@ public class MedicalRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(precision = 5, scale = 2)
+    @Column(name= "initial_weight", precision = 5, scale = 2)
     private BigDecimal weight;
 
-    @Column(name = "condition_status", length = 50)
+    @Column(name = "initial_condition", length = 50)
     private String conditionStatus;
 
-    @Column(name = "injury_description", columnDefinition = "TEXT")
+    @Column(name = "injuries", columnDefinition = "TEXT")
     private String injuryDescription;
 
     @Column(columnDefinition = "TEXT")
     private String observations;
 
-    @OneToOne(mappedBy = "medicalRecord")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "animal_id", unique = true)
     private Animal animal;
 
     public MedicalRecord() {
