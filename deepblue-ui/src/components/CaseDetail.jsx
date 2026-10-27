@@ -1,5 +1,7 @@
 import { useAnimal } from '../hooks/useAnimal'
+import ChangeStatus from './ChangeStatus'
 import ErrorMessage from './ErrorMessage'
+import TreatmentForm from './TreatmentForm'
 import TreatmentList from './TreatmentList'
 
 export default function CaseDetail({ caseItem, onChanged }) {
@@ -17,12 +19,17 @@ export default function CaseDetail({ caseItem, onChanged }) {
                 </p>
             </section>
 
+            <ChangeStatus
+                key={caseItem.caseCode}
+                caseItem={caseItem}
+                onChanged={onChanged}
+            />
+
             <section>
                 <h3>Animal {caseItem.animalCode}</h3>
                 {animal.isPending && <p>Cargando...</p>}
                 {animal.isError && <ErrorMessage error={animal.error} />}
 
-                {/* Muestra cualquier campo que devuelva tu API de animales */}
                 {animal.data && (
                     <ul>
                         {Object.entries(animal.data).map(([key, value]) => (
@@ -44,6 +51,8 @@ export default function CaseDetail({ caseItem, onChanged }) {
             </section>
 
             <TreatmentList query={treatments} />
+
+            <TreatmentForm key={caseItem.animalCode} animalCode={caseItem.animalCode} />
         </div>
     )
 }
